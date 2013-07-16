@@ -1,0 +1,2 @@
+https://github.com/pkrysiak/allegro_repo/archive/master.zip#egg=allegro
+https://github.com/pkrysiak/nokaut_repo/archive/master.zip#egg=nokaut
