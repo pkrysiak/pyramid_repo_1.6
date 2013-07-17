@@ -270,6 +270,7 @@ body {
   text-decoration: none;
   border-radius: 5px;
 }
+
 /* << List products */
 /* >> Bootstrap */
 .btn {
@@ -401,6 +402,10 @@ body {
 .spinner{
     background: url(../img/loader.gif) 98% center no-repeat;
     width: 60px;
+}
+
+.no_decoration{
+    text-decoration: none;
 }
 
 /* >> Box login */

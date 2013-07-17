@@ -64,7 +64,7 @@
               $last_update.text(data.last_update);
               $hits.text(data.search_quantity);
 
-           }).done(function() { done(button); alert(data.last_update); })
+           }).done(function() { done(button); })
              .fail(function() { alert('Refreshing failed..'); });
 
         function waiting(obj){

@@ -1,10 +1,9 @@
 from pyramid.authentication import AuthTktAuthenticationPolicy
 from pyramid.authorization import ACLAuthorizationPolicy
 from pyramid.config import Configurator
-from pyramid.security import Authenticated, Allow
+from pyramid.security import Authenticated, Allow, authenticated_userid
 from sqlalchemy import engine_from_config
-from .models import DBSession, Base
-from views import get_user
+from .models import DBSession, Base, User, UserSearch
 
 
 class Factory(object):
@@ -14,6 +13,11 @@ class Factory(object):
 
     def __init__(self, request):
         pass
+
+def get_user(request):
+    user_id = authenticated_userid(request)
+    if user_id is not None:
+        return DBSession.query(User).filter(User.id == user_id).first()
 
 def main(global_config, **settings):
     """ This function returns a Pyramid WSGI application.

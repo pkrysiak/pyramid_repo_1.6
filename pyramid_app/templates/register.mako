@@ -4,11 +4,7 @@
 <%block name="login_form">
     <div class="form_login">
         <div class="head_login">Register</div>
-            % if errors:
-                %for error in errors:
-                    <p id="red"> ${error} </p>
-                %endfor
-            % endif
+        ${render.errorlist()}
         <form id="reg_form" method="post" action="/register">
             <input class="input_text" type="text" name="login" value="login"/>
             <input class="input_text" type="password" name="password" value="password"/>

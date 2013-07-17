@@ -18,7 +18,7 @@
                     <td class="name_list" name="search_content">${hist.search_content}</td>
                     <td class="price_list" name="all_price"> ${hist.all_price} </td>
                     <td class="price_list" name="nok_price"> ${hist.nok_price} </td>
-                    <td class="price_list" name="last_update"> ${hist.last_update}</td>
+                    <td class="price_list" name="last_update"> ${hist.last_update_str}</td>
                     <td class="price_list" name="hits"> ${hist.search_quantity}</td>
                     <td class="more"><a href="${hist.all_link}" name="all_link">Link Allegro</a></td>
                     <td class="more"><a href="${hist.nok_link}" name="nok_link">Link Nokaut</a></td>

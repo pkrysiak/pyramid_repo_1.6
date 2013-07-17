@@ -28,14 +28,7 @@ class RegisterForm(Schema):
 
     ]
 
-class MatchUserName(FancyValidator):
-    def _to_python(self, value, state):
-        uname = DBSession.query(User).filter(User.username == value).first()
-        if uname is None:
-            raise Invalid('Invalid login data',uname, state)
-        return value
-
-class MatchUserPassword(FancyValidator):
+class LoginFormValidator(FancyValidator):
     def _to_python(self, value, state):
         login = state.full_dict['login']
         uname = DBSession.query(User).filter(User.password == value)\
@@ -50,5 +43,5 @@ class LoginForm(Schema):
     filter_extra_fields = True
     allow_extra_fields = True
 
-    login = MatchUserName()
-    password = MatchUserPassword()
+    login = validators.UnicodeString(min = 4, not_empty = True)
+    password = LoginFormValidator()
