@@ -53,9 +53,6 @@ def result_view(request):
 
         data.search_quantity += 1
         DBSession.flush()
-        return {
-            'data' : data
-        }
     else:
         all_link, all_price, nok_link, nok_price = search()
 
