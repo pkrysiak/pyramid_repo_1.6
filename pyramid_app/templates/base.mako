@@ -61,7 +61,7 @@
               $nok_price.text(data.nokaut_price);
               $all_link.attr('href', data.allegro_link);
               $nok_link.attr('href', data.nokaut_link);
-              $last_update.text(data.last_update);
+              $last_update.text(data.last_update_str);
               $hits.text(data.search_quantity);
 
            }).done(function() { done(button); })
